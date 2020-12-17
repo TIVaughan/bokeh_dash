@@ -22,13 +22,13 @@ hover = HoverTool(tooltips=[
 ], mode='vline')
 
 # Creating P1 Figure (OTP Composite)
-p1 = figure(title='OTP Composite', x_axis_label='Date', y_axis_label='Score', tools=[hover, 'crosshair', 'box_select'], plot_width=640, x_axis_type='datetime')
+p1 = figure(title='First Composite', x_axis_label='Date', y_axis_label='Score', tools=[hover, 'crosshair', 'box_select'], plot_width=640, x_axis_type='datetime')
 p1.line('date', 'value', source=otp, line_width = 3, line_alpha = .6)
 p1.title.align = "center"
 p1.title.text_font_size = "25px"
 
 # Creating P2 Figure, (AP Composite)
-p2 = figure(title='AP Composite', x_axis_label='Date', y_axis_label='Score', tools=[hover, 'crosshair', 'box_select'], plot_width=640, x_axis_type='datetime')
+p2 = figure(title='Second Composite', x_axis_label='Date', y_axis_label='Score', tools=[hover, 'crosshair', 'box_select'], plot_width=640, x_axis_type='datetime')
 p2.line('date', 'value', source=ap, line_width = 3, line_alpha = .6)
 p2.title.align = "center"
 p2.title.text_font_size = "25px"
@@ -77,7 +77,8 @@ p5.title.text_font_size = "25px"
 menu = Select(options=['All', 'B2', 'T3', 'C4'], value='All', title='Footprint')
 
 # Filter Definitions TBD
-
+#def callback(attr, old, new)
+#    if menu.value == 'B2': f =
 
 # Creating Panel Objects for Tabs
 quality = Panel(child=column(menu, row(p1, p2), p3), title='Quality Composite Scores')
